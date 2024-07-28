@@ -1,0 +1,1161 @@
+.section {
+    &>.content {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 90px;
+
+        &>.subheader {
+            &>div {
+                &>.name, &>.result, &>.time {
+                    display: inline;
+                    color: var(--menu-text-color);
+                }
+
+                &>.result {
+                    &.horde {
+                        color: #CD0A0E;
+                    }
+
+                    &.alliance {
+                        color: #1A67F4;
+                    }
+                }
+            }
+        }
+
+        &>.message {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        &>.table {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            font-size: 13px;
+            line-height: 15px;
+            padding: 12px;
+            margin: 0 10px;
+            background: url(/public/img/frame/top-left.webp) top left no-repeat,
+                        url(/public/img/frame/top-right.webp) top right no-repeat,
+                        url(/public/img/frame/bot-left.webp) bottom left no-repeat,
+                        url(/public/img/frame/bot-right.webp) bottom right no-repeat,
+                        url(/public/img/frame/top.webp) top left repeat-x,
+                        url(/public/img/frame/bot.webp) bottom left repeat-x,
+                        url(/public/img/frame/left.webp) top left repeat-y,
+                        url(/public/img/frame/right.webp) top right repeat-y,
+                        rgba(36, 35, 33, 1);
+
+            &.status, &.history {
+                &>.header, &>.row {
+                    &>div {
+                        &.name {
+                            flex: 0.375;
+                        }
+                    }
+                }
+
+                &>.row {
+                    &>div {
+                        &.name, &.type {
+                            &>img {
+                                width: auto;
+                                height: 16px;
+                                background-position: center center;
+                                margin-right: 5px;
+
+                                &:hover {
+                                    filter: brightness(1.35);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.status {
+                &>.header, &>.row {
+                    &>div {
+                        &.type {
+                            flex: 0.125;
+                        }
+                        
+                        &.population, &.status {
+                            flex: 0.15;
+                        }
+                        
+                        &.uptime {
+                            flex: 0.2;
+                        }
+                    }
+                    
+                    &>.online::before, &>.offline::before {
+                        display: inline-block;
+                        content: " ";
+                        height: 18px;
+                        width: 18px;
+                        margin-right: 5px;
+                    }
+                    &>.online::before {
+                        background: url(/public/img/status/online.webp) center center / 95% no-repeat;
+                    }
+
+                    &>.offline::before {
+                        margin-top: -2px;
+                        background: url(/public/img/status/offline.webp) center center / 95% no-repeat;
+                    }
+                }
+            }
+
+            &.history {
+                &>.header, &>.row {
+                    &>div {
+                        &.type {
+                            flex: 0.125;
+                        }
+
+                        &.players {
+                            flex: 0.1;
+                        }
+
+                        &.started, &.uptime {
+                            flex: 0.2;
+                        }
+                    }
+                }
+            }
+
+            &.players, &.honor {
+                &>.header, &>.row {
+                    &>div {
+                        &.id {
+                            flex: 0.075;
+                        }
+                        
+                        &.name {
+                            flex: 0.325;
+                        }
+
+                        &.level, &.race, &.class {
+                            flex: 0.1;
+                        }
+
+                        &.race, &.class {
+                            &>img:hover {
+                                    filter: brightness(1.35);
+                            }
+                        }
+
+                        &.playtime {
+                            flex: 0.3;
+                        }
+
+                        &.honor, &.hkdk {
+                            flex: 0.15;
+                        }
+
+                        &>img {
+                            box-sizing: border-box;
+                            border: 1px solid rgba(0, 0, 0, 1);
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+
+                    &.horde {
+                        &>.name {
+                            color: #CD0A0E;
+
+                            &>a {
+                                color: #CD0A0E;
+                                text-decoration: none;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+
+                    &.alliance {
+                        &>.name {
+                            color: #1A67F4;
+
+                            &>a {
+                                color: #1A67F4;
+                                text-decoration: none;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &>.row {
+                    &>div {
+                        &.hkdk {
+                            &>div {
+                                &>div:first-of-type {
+                                    display: inline;
+                                    color: #048830 !important;
+                                }
+        
+                                &>div:last-of-type {
+                                    display: inline;
+                                    color: #CD0A0E !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.battlegrounds {
+                &>.header, &>.row {
+                    &>div {
+                        &.id {
+                            flex: 0.075;
+                        }
+                        
+                        &.type {
+                            flex: 0.5;
+
+                            &.horde {
+                                &>a {
+                                    color: #CD0A0E;
+                                    text-decoration: none;
+    
+                                    &:hover {
+                                        text-decoration: underline;
+                                    }
+                                }
+                            }
+
+                            &.alliance {
+                                &>a {
+                                    color: #1A67F4;
+                                    text-decoration: none;
+    
+                                    &:hover {
+                                        text-decoration: underline;
+                                    }
+                                }
+                            }
+
+                            &.draw {
+                                &>a {
+                                    color: #000;
+                                    text-decoration: none;
+    
+                                    &:hover {
+                                        text-decoration: underline;
+                                    }
+                                }
+
+                                &>img {
+                                    border: none;
+                                }
+                            }
+
+                            &>img {
+                                box-sizing: border-box;
+                                border: 1px solid rgba(0, 0, 0, 1);
+                                width: 20px;
+                                height: 20px;
+                                margin-right: 5px;
+
+                                &:hover {
+                                    filter: brightness(1.35);
+                                }
+                            }
+                        }
+
+                        &.bracket {
+                            flex: 0.15;
+                        }
+
+                        &.date {
+                            flex: 0.275;
+                        }
+                    }
+                }
+            }
+
+            &.guilds {
+                &>.header, &>.row {
+                    &>div {
+                        &.id {
+                            flex: 0.075;
+                        }
+
+                        &.name, &.leader {
+                            flex: 0.325;
+
+                            &.horde {
+                                color: #CD0A0E;
+
+                                &>a {
+                                    color: #CD0A0E;
+                                    text-decoration: none;
+    
+                                    &:hover {
+                                        text-decoration: underline;
+                                    }
+                                }
+                            }
+
+                            &.alliance {
+                                color: #1A67F4;
+                                
+                                &>a {
+                                    color: #1A67F4;
+                                    text-decoration: none;
+    
+                                    &:hover {
+                                        text-decoration: underline;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.members {
+                            flex: 0.125;
+                        }
+
+                        &.date {
+                            flex: 0.2;
+                        }
+                    }
+                }
+            }
+
+            &.battleground_details {
+                &>.header, &>.row {
+                    &>div {
+                        &.id {
+                            flex: 0.05;
+                        }
+                        
+                        &.name {
+                            flex: 0.325;
+                        }
+
+                        &.race, &.class {
+                            flex: 0.075;
+                        }
+
+                        &.kdhk {
+                            flex: 0.15;
+                        }
+
+                        &.honor {
+                            flex: 0.1;
+                        }
+
+                        &.damage-healing {
+                            flex: 0.225;
+                        }
+                    }
+                    
+                    &.horde {
+                        &>.name {
+                            color: #CD0A0E;
+
+                            &>a {
+                                color: #CD0A0E;
+                                text-decoration: none;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+
+                    &.alliance {
+                        &>.name {
+                            color: #1A67F4;
+
+                            &>a {
+                                color: #1A67F4;
+                                text-decoration: none;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &>.row {
+                    &>.damage-healing {
+                        &>div {
+                            &>div:first-of-type {
+                                display: inline;
+                                color: #CD0A0E !important;
+                            }
+    
+                            &>div:last-of-type {
+                                display: inline;
+                                color: #048830 !important;
+                            }
+                        }
+                    }
+
+                    &>div {
+                        &.name, &.race, &.class {
+                            &>img {
+                                box-sizing: border-box;
+                                border: 1px solid rgba(0, 0, 0, 1);
+                                width: 20px;
+                                height: 20px;
+
+                                &:hover {
+                                    filter: brightness(1.35);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.guild_details {
+                &>.header, &>.row {
+                    &>div {
+                        &.id {
+                            flex: 0.075;
+                        }
+                        
+                        &.name {
+                            flex: 0.325;
+                        }
+
+                        &.level {
+                            flex: 0.1;
+                        }
+
+                        &.race, &.class {
+                            flex: 0.1;
+                        }
+
+                        &.rank {
+                            flex: 0.3;
+                        }
+                    }
+
+                    &.horde {
+                        &>.name {
+                            color: #CD0A0E !important;
+
+                            &>a {
+                                color: #CD0A0E;
+                                text-decoration: none;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+
+                    &.alliance {
+                        &>.name {
+                            color: #1A67F4 !important;
+
+                            &>a {
+                                color: #1A67F4;
+                                text-decoration: none;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &>.row {
+                    &>.damage-healing {
+                        &>div {
+                            &>div:first-of-type {
+                                display: inline;
+                                color: #CD0A0E !important;
+                            }
+    
+                            &>div:last-of-type {
+                                display: inline;
+                                color: #07A33B !important;
+                            }
+                        }
+                    }
+
+                    &>div {
+                        &.name, &.race, &.class {
+                            &>img {
+                                box-sizing: border-box;
+                                border: 1px solid rgba(0, 0, 0, 1);
+                                width: 20px;
+                                height: 20px;
+
+                                &:hover {
+                                    filter: brightness(1.35);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &>.header, &>.row {
+                display: flex;
+                height: 26px;
+                flex-direction: row;
+                
+                &.error {
+                    border-color:#D8BF95 #D8BF95 transparent transparent;
+                    background-color:#E2CBA1;
+
+                    &>div {
+                        color:rgba(36, 35, 33, 1);
+                    }
+                }
+
+                &>div {
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: rgba(221, 221, 221, 1);
+                    border: 1px solid rgba(0, 0, 0, 0);
+                }
+            }
+
+            &>.header {
+                &>div {
+                    border-color:#5D5D5D #5D5D5D #1E1D1C #1E1D1C;
+                    background: #2E2D2B;
+                }
+            }
+
+            &>.row:nth-of-type(2n + 1) {
+                &.classic>div {
+                    color:rgba(36, 35, 33, 1);
+                    border-color:#D8BF95 #D8BF95 transparent transparent;
+                    background-color:#C3AD89;
+                }
+                &.tbc>div {
+                    color:rgba(36, 35, 33, 1);
+                    border-color:#B6C89E #B6C89E transparent transparent;
+                    background-color:#A5B590;
+                }
+                &.wotlk>div {
+                    color:rgba(36, 35, 33, 1);
+                    border-color:#B6C2D7 #B6C2D7 transparent transparent;
+                    background-color:#A5B0C2;
+                }
+            }
+
+            &>.row:nth-of-type(2n) {
+                &.classic>div {
+                    color:rgba(36, 35, 33, 1);
+                    border-color:#D8BF95 #D8BF95 transparent transparent;
+                    background-color:#E2CBA1;
+                }
+                &.tbc>div {
+                    color:rgba(36, 35, 33, 1);
+                    border-color:#B6C89E #B6C89E transparent transparent;
+                    background-color:#C1D4AA;
+                }
+                &.wotlk>div {
+                    color:rgba(36, 35, 33, 1);
+                    border-color:#B6C2D7 #B6C2D7 transparent transparent;
+                    background-color:#C2CEE3;
+                }
+            }
+        }
+
+        .graph {
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            &.races {
+                padding: 0 20px;
+                border-bottom: 1px solid rgba(0, 0, 0, 1);
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+            }
+
+            &.classes {
+                padding: 0 160px;
+                margin-bottom: 10px;
+            }
+            
+            &>.data {
+                height: 150px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin-bottom: 10px;
+
+                &>.bar {
+                    display: flex;
+                    height: 150px;
+                    width: 14px;
+                    margin: auto;
+                    margin-bottom: 0;
+                    justify-content: center;
+                    align-items: flex-end;
+                    background: rgba(0, 0, 0, 0.6);
+                    cursor: pointer;
+                    box-sizing: border-box;
+                    border: 1px solid rgba(0, 0, 0, 1);
+                    border-radius: 7px;
+                    overflow: hidden;
+
+                    &>.fill {
+                        z-index: 1 !important;
+                        background: rgba(244, 196, 0, 1);
+                        width: 18px;
+
+                        &:hover {
+                            filter: brightness(1.35);
+                        }
+                    }
+                }
+
+                &.tbc {
+                    &>.bar>.fill {
+                        background: rgb(139, 194, 67);
+                    }
+                }
+
+                &.wotlk {
+                    &>.bar>.fill {
+                        background: rgb(67, 158, 194);
+                    }
+                }
+            }
+            &>.legend {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+    
+                &>.race, &>.class {
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+
+                    &>img {
+                        box-sizing: border-box;
+                        border: 1px solid rgba(0, 0, 0, 1);
+                        width: 26px;
+                        height: 26px;
+
+                        &:hover {
+                            filter: brightness(1.35);
+                        }
+                    }
+                }
+            }
+        }
+    }
+   
+    &.armory {
+        &>.content {
+            display: flex;
+            position: relative;
+
+            padding: 15px !important;
+
+            .header {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                font-weight: 500;
+                color: #eee;
+                box-shadow: 0 0 3px 0 #000;
+                height: 42px;
+                user-select: none;
+
+                &.alliance {
+                    background: url(/public/img/header/faction/alliance-left.webp) top left no-repeat,
+                                url(/public/img/header/faction/alliance-right.webp) top right no-repeat,
+                                url(/public/img/header/faction/alliance.webp) top center repeat-x;
+                }
+
+                &.horde {
+                    background: url(/public/img/header/faction/horde-left.webp) top left no-repeat,
+                                url(/public/img/header/faction/horde-right.webp) top right no-repeat,
+                                url(/public/img/header/faction/horde.webp) top center repeat-x;
+                }
+
+                .information {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    margin-left: 10px;
+
+                    .name {
+                        align-self: flex-start;
+                        text-decoration: none;
+                        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.85);
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+
+                        &.warrior {
+                            color: #c69b6d;
+                        }
+
+                        &.paladin {
+                            color: #f48cba;
+                        }
+
+                        &.hunter {
+                            color: #aad372;
+                        }
+
+                        &.rogue {
+                            color: #fff468;
+                        }
+
+                        &.priest {
+                            color: #eee;
+                        }
+
+                        &.death_knight {
+                            color: #c41e3a;
+                        }
+
+                        &.shaman {
+                            color: #0070dd;
+                        }
+
+                        &.mage {
+                            color: #3fc7eb;
+                        }
+
+                        &.warlock {
+                            color: #8788ee;
+                        }
+
+                        &.druid {
+                            color: #ff7c0a;
+                        }
+                    }
+
+                    .level {
+                        align-self: flex-start;
+                    }
+
+                    .guild {
+                        position: absolute;
+                        right: 30px;
+
+                        a {
+                            color: #ffd700;
+                            text-decoration: none;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .body {
+                display: flex;
+                flex-direction: row;
+                gap: 15px;
+
+                .details {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                    margin-top: 15px;
+                    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+
+                    .category {
+                        &>.subheader {
+                            background: var(--subheader-left) left no-repeat,
+                                        var(--subheader-right) right no-repeat,
+                                        var(--subheader-background) repeat-x;
+                            display: flex;
+                            height: 24px;
+                            align-items: center;
+                            margin-bottom: 15px;
+                            padding-left: 26px;
+                            color: rgba(238, 238, 238, 1);
+                            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.35);
+                            user-select: none;
+    
+                            &:not(:first-of-type) {
+                                margin-top: 15px;
+                            }
+                        }
+
+                        .row {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin: 0 15px;
+                            margin-bottom: 15px;
+
+                            &:not(:last-of-type) {
+                                margin-bottom: 6px;
+                                padding-bottom: 6px;
+                                border-bottom: 1px dashed #000;
+                            }
+                        }
+                    }
+                }
+
+                #viewer {
+                    width: 315px;
+                    height: 441px;
+                    margin: 15px 57px 57px 57px;
+                    background-color: #000;
+                    box-shadow: 0 0 3px 0 #000;
+                    user-select: none;
+    
+                    .spinner {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 64px;
+                        height: 64px;
+                        transform: translate(-32px, -32px);
+                        opacity: 0.5;
+                        background: url(/public/img/spinner.webp) no-repeat;
+                    }
+    
+                    canvas {
+                        opacity: 0;
+                        cursor: grab;
+    
+                        &:active:hover {
+                            cursor: grabbing;
+                        }
+                    }
+    
+                    .powers {
+                        position: absolute;
+                        display: flex;
+                        flex-direction: row;
+                        gap: 10px;
+                        bottom: 10px;
+                        margin: 0 10px;
+                        width: 295px;
+                        color: #eee;
+                        text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    
+                        .health, .mana {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex: 1;
+                            height: 18px;
+    
+                            &:hover {
+                                filter: brightness(1.35);
+                                color: #ddd;
+                            }
+                        }
+    
+                        .health {
+                            background: #1e8700;
+                            border: 1px solid #4da22d;
+                        }
+    
+                        .mana {
+                            background: #144680;
+                            border: 1px solid #4783c6;
+                        }
+    
+                    }
+    
+                    .resistance {
+                        position: absolute;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        right: 10px;
+                        width: 24px;
+                        height: 24px;
+                        color: #eee;
+                        border: 1px solid #aaa;
+                        font-size: 11px;
+                        text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+                        cursor: pointer;
+    
+                        &:hover {
+                            filter: brightness(1.35);
+                        }
+    
+                        &.fire {
+                            background: url(/public/img/icon/resistance/fire.webp) center center / 100% 100% no-repeat;
+                            top: 10px;
+                        }
+    
+                        &.nature {
+                            background: url(/public/img/icon/resistance/nature.webp) center center / 100% 100% no-repeat;
+                            top: 44px;
+                        }
+    
+                        &.frost {
+                            background: url(/public/img/icon/resistance/frost.webp) center center / 100% 100% no-repeat;
+                            top: 78px;
+                        }
+    
+                        &.shadow {
+                            background: url(/public/img/icon/resistance/shadow.webp) center center / 100% 100% no-repeat;
+                            top: 112px;
+                        }
+    
+                        &.arcane {
+                            background: url(/public/img/icon/resistance/arcane.webp) center center / 100% 100% no-repeat;
+                            top: 146px;
+                        }
+                    }
+    
+                    &.human {
+                        background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+                                    url(/public/img/background/human.webp) center center / 100% 100% no-repeat !important;
+                    }
+    
+                    &.dwarf, &.gnome {
+                        background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+                                    url(/public/img/background/dwarf.webp) center center / 100% 100% no-repeat !important;
+                    }
+    
+                    &.night_elf {
+                        background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+                                    url(/public/img/background/night_elf.webp) center center / 100% 100% no-repeat !important;
+                    }
+    
+                    &.draenei {
+                        background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+                                    url(/public/img/background/draenei.webp) center center / 100% 100% no-repeat !important;
+                    }
+    
+                    &.orc, &.troll {
+                        background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+                                    url(/public/img/background/orc.webp) center center / 100% 100% no-repeat !important;
+                    }
+    
+                    &.undead {
+                        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                                    url(/public/img/background/undead.webp) center center / 100% 100% no-repeat !important;
+                    }
+    
+                    &.tauren {
+                        background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+                                    url(/public/img/background/tauren.webp) center center / 100% 100% no-repeat !important;
+                    }
+    
+                    &.blood_elf {
+                        background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+                                    url(/public/img/background/blood_elf.webp) center center / 100% 100% no-repeat !important;
+                    }
+    
+                    .slot {
+                        position: absolute;
+                        top: 0;
+                        width: 42px;
+                        height: 42px;
+                        background-color: #000;
+                        overflow: hidden;
+                        cursor: pointer;
+                        box-shadow: 0 0 3px 0 #000;
+    
+                        &:not(:has(a)):hover {
+                            filter: brightness(1.75);
+                        }
+    
+                        &:hover > a > img {
+                            filter: brightness(1.35);
+                        }
+    
+                        a {
+                            display: block;
+                            width: 38px;
+                            height: 38px;
+                            border: 1px solid #fff;
+                            margin: 1px;
+    
+                            img {
+                                margin: 1px;
+                            }
+    
+                            &.poor {
+                                border-color: #8d8d8d;
+                            }
+    
+                            &.common {
+                                border-color: #eee;
+                            }
+    
+                            &.uncommon {
+                                border-color: #0ecf00;
+                            }
+    
+                            &.rare {
+                                border-color: #0070dd;
+                            }
+    
+                            &.epic {
+                                border-color: #a335ee;
+                            }
+    
+                            &.legendary {
+                                border-color: #ff8000;
+                            }
+    
+                            &.artifact {
+                                border-color: #e6cc80;
+                            }
+                        }
+    
+                        &.head, &.neck, &.shoulders, &.back, &.chest, &.shirt, &.tabard, &.wrists {
+                            left: -57px;
+                        }
+            
+                        &.hands, &.waist, &.legs, &.feet, &.finger1, &.finger2, &.trinket1, &.trinket2 {
+                            right: -57px;
+                        }
+    
+                        &.head {
+                            background: url(/public/img/icon/slot/head.webp) center center no-repeat;
+                        }
+            
+                        &.neck {
+                            background: url(/public/img/icon/slot/neck.webp) center center no-repeat;
+                            top: 57px;
+                        }
+            
+                        &.shoulders {
+                            background: url(/public/img/icon/slot/shoulders.webp) center center no-repeat;
+                            top: 114px;
+                        }
+            
+                        &.back {
+                            background: url(/public/img/icon/slot/back.webp) center center no-repeat;
+                            top: 171px;
+                        }
+            
+                        &.chest {
+                            background: url(/public/img/icon/slot/chest.webp) center center no-repeat;
+                            top: 228px;
+                        }
+            
+                        &.shirt {
+                            background: url(/public/img/icon/slot/shirt.webp) center center no-repeat;
+                            top: 285px;
+                        }
+            
+                        &.tabard {
+                            background: url(/public/img/icon/slot/tabard.webp) center center no-repeat;
+                            top: 342px;
+                        }
+            
+                        &.wrists {
+                            background: url(/public/img/icon/slot/wrists.webp) center center no-repeat;
+                            top: 399px;
+                        }
+    
+                        &.hands {
+                            background: url(/public/img/icon/slot/hands.webp) center center no-repeat;
+                        }
+            
+                        &.waist {
+                            background: url(/public/img/icon/slot/waist.webp) center center no-repeat;
+                            top: 57px;
+                        }
+            
+                        &.legs {
+                            background: url(/public/img/icon/slot/legs.webp) center center no-repeat;
+                            top: 114px;
+                        }
+            
+                        &.feet {
+                            background: url(/public/img/icon/slot/feet.webp) center center no-repeat;
+                            top: 171px;
+                        }
+            
+                        &.finger1 {
+                            background: url(/public/img/icon/slot/finger.webp) center center no-repeat;
+                            top: 228px;
+                        }
+            
+                        &.finger2 {
+                            background: url(/public/img/icon/slot/finger.webp) center center no-repeat;
+                            top: 285px;
+                        }
+            
+                        &.trinket1 {
+                            background: url(/public/img/icon/slot/trinket.webp) center center no-repeat;
+                            top: 342px;
+                        }
+            
+                        &.trinket2 {
+                            background: url(/public/img/icon/slot/trinket.webp) center center no-repeat;
+                            top: 399px;
+                        }
+            
+                        &.main_hand {
+                            background: url(/public/img/icon/slot/main_hand.webp) center center no-repeat;
+                            top: 456px;
+                            left: 79px;
+                        }
+            
+                        &.off_hand {
+                            background: url(/public/img/icon/slot/off_hand.webp) center center no-repeat;
+                            top: 456px;
+                            left: 136px;
+                        }
+            
+                        &.ranged {
+                            background: url(/public/img/icon/slot/ranged.webp) center center no-repeat;
+                            top: 456px;
+                            right: 79px;
+                        }
+    
+                        &.relic {
+                            background: url(/public/img/icon/slot/relic.webp) center center no-repeat;
+                            top: 456px;
+                            right: 79px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.wowhead-tooltip {
+    .whtt-extra {
+        display: none !important;
+    }
+    tr, td, th, tbody, thead, b {
+        background: transparent !important;
+        background-image: none !important;
+        font-size: 12px !important;
+    }
+    &>table {
+        min-width: 250px;
+        background-color: #333;
+        color: #fff;
+        padding: 4px 6px;
+        border-radius: 2px;
+        box-shadow: 0 0 1px rgba(238, 238, 238, 1);
+    }
+}

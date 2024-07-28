@@ -1,0 +1,39 @@
+<? include('./application/views/header.php'); ?>
+                <link rel="stylesheet" href="/public/css/account.css">
+                <div class="section nickname">
+                    <div class="header"><?=$subtitle?></div>
+                    <form method='post'>
+                        <div class="input<?=strlen($errors['nickname']) ? " error" : ""?>">
+                            <div class="element">
+                                <label for="nickname">New Nickname</label>
+                                <input type='text' id="nickname" name='nickname' maxlength='16' value='<?=$values['nickname']?>' autocorrect='off' autocapitalize='off'>
+                            </div>
+                            <div class="info">Between 4-16 alphanumeric characters.<br/>Allowed characters: . _</div>
+                            <div class="warning"><?=$errors['nickname']?></div>
+                        </div>
+                        <div class="input<?=strlen($errors['password']) ? " error" : ""?>">
+                            <div class="element">
+                                <label for="password">Password</label>
+                                <input type='password' id="password" name='password' maxlength='16' value='<?=$values['password']?>' autocorrect='off' autocapitalize='off'>
+                            </div>
+                            <div class="info">Between 4-16 alphanumeric characters.<br/>Allowed characters: . ! @ # $ % ^ & * _ - +</div>
+                            <div class="warning"><?=$errors['password']?></div>
+                        </div>
+<? if ($errors['mfa']) { ?>
+                        <div class="input<?=strlen($errors['code']) ? " error" : ""?>">
+                            <div class="element">
+                                <label for="code">OTP / RECOVERY KEY</label>
+                                <input type='text' id="code" name='code' maxlength='<?=OTP_TOKEN_LENGTH?>' value='' autocorrect='off' autocapitalize='off' autofocus>
+                            </div>
+                            <div class="info">Exactly <?=OTP_TOKEN_LENGTH?> numeric / alphanumeric characters.</div>
+                            <div class="warning"><?=$errors['code']?></div>
+                        </div>
+<? } ?>
+                        <div class="input">
+                            <div class="button">
+                                <input type='submit' value='Change'/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+<? include('./application/views/footer.php'); ?>
