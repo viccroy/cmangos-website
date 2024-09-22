@@ -38,7 +38,7 @@
 <? foreach($slots as $slot => $type) { ?>
                                 <div class='slot <?=$type?>'>
 <? if ($character['items'][$slot]) { ?>
-                                    <a class='<?=lcfirst($character['items'][$slot]['quality_name'])?>' href='#' onClick='return false' data-wowhead='item=<?=$character['items'][$slot]['id']?>&domain=<?=$realm['version'][0]?>&rand=-1'>
+                                    <a class='<?=lcfirst($character['items'][$slot]['quality_name'])?>' href='#' onClick='return false' data-wowhead='item=<?=$character['items'][$slot]['id']?>&domain=<?=$realm['version'][0]?>&rand=<?=$character['items'][$slot]['random_property']?>'>
                                         <img src='/public/img/icon/36x36/<?=$character['items'][$slot]['icon']?>.webp'/>
                                     </a>
 <? } ?>

@@ -149,7 +149,7 @@
 		}
 
         public function get_character_items($character_id, $realm_id) {
-            $statement = database::connection()->prepare('SELECT a.id AS id, i.slot AS slot, a.slot AS displayslot, a.displayid AS display_id, a.icon AS icon, t.sheath AS sheath, t.quality AS quality FROM ' . DB_MANGOSD[$realm_id]['character'] . '.character_inventory i, ' . DB_MANGOSD[$realm_id]['world'] . '.item_template t, ' . DB_WEBSITE . '.armory_items a WHERE i.bag = 0 AND i.slot < 19 AND i.item_template = a.id AND i.item_template = t.entry AND i.guid = :character_id ORDER BY a.slot, i.guid');
+            $statement = database::connection()->prepare('SELECT a.id AS id, i.slot AS slot, a.slot AS displayslot, a.displayid AS display_id, a.icon AS icon, t.sheath AS sheath, t.quality AS quality, i2.randomPropertyId as random_property FROM ' . DB_MANGOSD[$realm_id]['character'] . '.character_inventory i, ' . DB_MANGOSD[$realm_id]['character'] . '.item_instance i2, ' . DB_MANGOSD[$realm_id]['world'] . '.item_template t, ' . DB_WEBSITE . '.armory_items a WHERE i.bag = 0 AND i.slot < 19 AND i.item_template = a.id AND i.item_template = t.entry AND i.guid = :character_id AND i.item = i2.guid ORDER BY a.slot, i.guid');
 			$statement->execute(array('character_id' => $character_id));
 			$result = $statement->fetchAll(PDO::FETCH_ASSOC);
 			if (!$result)
