@@ -359,7 +359,7 @@
 
             $this->data['character']['models'] = '';
             foreach ($this->data['character']['items'] as $slot => $item) {
-                if (!in_array($slot, $this->get_hidden_slots()) && $item['display_id'] && $item['id'] !== '5976') {
+                if (!in_array($slot, $this->get_hidden_slots()) && $item['display_id'] && $item['id'] != '5976') {
                     $this->data['character']['models'] .= (strlen($this->data['character']['models']) > 0 ? ', ' : '') . '[' . $item['displayslot'] . ', ' . $item['display_id'] . ']';
                 }
             }
