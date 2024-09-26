@@ -16,7 +16,7 @@
                                 <label for="email">Email</label>
                                 <input type='text' id="email" name='email' maxlength='32' value='<?=$values['email']?>' placeholder='username@domain' autocorrect='off' autocapitalize='off'>
                             </div>
-                            <div class="info">Between 4-32 characters.<br/>Allowed characters: _ + - @ .</div>
+                            <div class="info">Between 4-32 characters.<br/>Allowed characters: . @ _ - +</div>
                             <div class="warning"><?=$errors['email']?></div>
                         </div>
                         <div class="input<?=strlen($errors['password']) ? " error" : ""?>">
