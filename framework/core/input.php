@@ -56,8 +56,8 @@
 
         private function sanitize($value) {
             $sanitized = trim($value);
-            $sanitized = filter_var($sanitized, FILTER_SANITIZE_STRING);
             $sanitized = strip_tags($sanitized);
+            $sanitized = filter_var($sanitized, FILTER_SANITIZE_SPECIAL_CHARS);
             return $sanitized;
         }
     }

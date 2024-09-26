@@ -273,7 +273,7 @@ body {
                     &>.guide { background: url(/public/img/theme/button/guide-off.webp); }
                     &>.story { background: url(/public/img/theme/button/story-off.webp); }
                     &>.community { background: url(/public/img/theme/button/community-off.webp); }
-                    &>.realms { background: url(/public/img/themes/button/realms-off.webp); }
+                    &>.realms { background: url(/public/img/theme/button/realms-off.webp); }
                     &>.status { background: var(--menu-button-plus); }
                     &>.sub-menu { display: none; }
                 }

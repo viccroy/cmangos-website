@@ -25,7 +25,7 @@
     }
 
     function sanitize($value) {
-        return strip_tags(filter_var(trim($value), FILTER_SANITIZE_STRING));
+        return strip_tags(filter_var(trim($value), FILTER_SANITIZE_SPECIAL_CHARS));
     }
 
     function random_string($length = 32) {
